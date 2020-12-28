@@ -1,5 +1,5 @@
 //
-//  main.cpp
+//  .cpp
 //  StudyPlan
 //
 //  Created by Hoang Viet on 05/12/2020.
@@ -15,7 +15,7 @@ int utilities(int argc, const char * argv[]) {
     
     return 0;
 }
-string encrytefunction(string message){
+string encryte(string message){
     string aphabet = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
     string encryptedMessage {" "};
     size_t index=0;
@@ -27,7 +27,17 @@ string encrytefunction(string message){
                 position =0;
                 encryptedMessage.at(index)=aphabet.at(position+3);
                 ++index;
-            }else{
+            }else if (position == aphabet.length()-1) {
+                encryptedMessage.at(index)=aphabet.at(2);
+                ++index;
+            }else if (position == aphabet.length()-2){
+                encryptedMessage.at(index)=aphabet.at(1);
+                ++index;
+            }else if (position == aphabet.length()-3){
+                encryptedMessage.at(index)=aphabet.at(0);
+                ++index;
+            }
+            else{
                 encryptedMessage.at(index)=aphabet.at(position+3);
                 ++index;
             }
@@ -38,7 +48,7 @@ string encrytefunction(string message){
     }
     return encryptedMessage;
 }
-string decryptefunction(string encrytedmessage){
+string decrypte(string encrytedmessage){
     string aphabet = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
     string decryptedMessage {" "};
     size_t index=0;
@@ -47,10 +57,20 @@ string decryptefunction(string encrytedmessage){
         size_t position = aphabet.find(c);
         if (position!=string::npos){
             if (position == aphabet.length()){
-                position =0;
+                position=0;
                 decryptedMessage.at(index)=aphabet.at(position-3);
                 ++index;
-            }else{
+            }else if (position == 1) {
+                decryptedMessage.at(index)=aphabet.at(aphabet.length()-2);
+                ++index;
+            }else if (position == 2){
+                decryptedMessage.at(index)=aphabet.at(aphabet.length()-1);
+                ++index;
+            }else if (position == 0){
+                decryptedMessage.at(index)=aphabet.at(aphabet.length()-3);
+                ++index;
+            }
+            else{
                 decryptedMessage.at(index)=aphabet.at(position-3);
                 ++index;
             }
@@ -90,10 +110,34 @@ int erypteanđeryte() {
         }
         
     }
-    encryptedMessage = encrytefunction(longestmessage);
+    encryptedMessage = encryte(longestmessage);
     cout<< "Encrypted message is: "<<encryptedMessage<<endl;
     cout<< "Decrypting..........."<<endl;
-    encryptedMessage = decryptefunction(encryptedMessage);
+    encryptedMessage = decrypte(encryptedMessage);
     cout<< "Encrypted message is: "<<encryptedMessage<<endl;
+    return 0;
+}
+int LetterPyramid() {
+    string characters {};
+    string middlechar {};
+    string halfchar {};
+    string rehalfchar {};
+    cout<<"write the letters chain you want to fill: ";
+    size_t index =0;
+    getline(cin, characters);
+    cout<<characters.length()<<endl;
+    size_t spacetimes = characters.length()-1;
+    for (size_t i=1;i<=characters.length();++i){
+        size_t length = i+index;
+        length = length/2 +0.5;
+        ++index;
+        middlechar = characters.at(length);
+        halfchar = characters.substr(0,length);
+        rehalfchar = halfchar;
+        reverse(rehalfchar.begin(), rehalfchar.end());
+        string space (spacetimes,' ');
+        spacetimes = spacetimes -1;
+        cout<<space<<halfchar<<middlechar<<rehalfchar<<endl;
+    }
     return 0;
 }
