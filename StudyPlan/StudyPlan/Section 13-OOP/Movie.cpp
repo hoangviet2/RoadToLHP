@@ -1,22 +1,34 @@
-//
-//  Movie.cpp
-//  StudyPlan
-//
-//  Created by Hoang Viet on 17/01/2021.
-//
+/******************************************************************
+ * Section 13 Challenge
+ * Movie.cpp
+ * 
+ * Models a Movie with the following atttributes
+ * 
+ * std::string name - the name of the movie 
+ * std::string rating - G, PG, PG-13, R
+ * int watched - the number of times you've watched the movie
+ * ***************************************************************/
 #include <iostream>
-#include "Movie.hpp"
-using namespace std;
-Movie::Movie(string name, string rate, int watched)
-    :movie_name{name},movie_rate{rate},watched{watched}{
+#include "Movie.h"
+
+// Implemention of the construcor
+
+Movie::Movie(std::string name, std::string rating, int watched) 
+    : name(name), rating(rating), watched(watched)  {
 }
-Movie::Movie(const Movie &source)
-    :Movie(source.movie_name,source.movie_rate,source.watched){
-    
+
+//Implemention of the copy constructor
+Movie::Movie(const Movie &source) 
+    : Movie{source.name, source.rating, source.watched} {
 }
-Movie::~Movie(){
-    cout<<"Destructor called";
+
+// Implementation of the destructor
+Movie::~Movie() {
 }
-void Movie::display() const{
-    cout<<"Movie's name: "<<movie_name<<" Movie's rate: "<<movie_rate<<" watched times: "<<watched;
+
+// Implementation of the display method
+// should just insert the movie attributes to cout
+
+void Movie::display() const {
+    std::cout << name << ", " << rating <<  ", " << watched  <<   std::endl;
 }
