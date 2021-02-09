@@ -10,24 +10,24 @@
 
 using namespace std; 
 
-int main_polymorphism() {
-    Checking_Account frank {"Frank", 5000};
+int main_Section_16() {
+    Checking_Account_Section_16 frank {"Frank", 5000};
     cout << frank << endl;
     
-    Account *trust = new Trust_Account("James");
+    Account_Section_16 *trust = new Trust_Account_Section_16("James");
     cout << *trust << endl;
     
-    Account *p1 = new Checking_Account("Larry", 10000);
-    Account *p2 = new Savings_Account("Moe", 1000);
-    Account *p3 = new Trust_Account("Curly");
+    Account_Section_16 *p1 = new Checking_Account_Section_16("Larry", 10000);
+    Account_Section_16 *p2 = new Savings_Account_Section_16("Moe", 1000);
+    Account_Section_16 *p3 = new Trust_Account_Section_16("Curly");
     
-    std::vector<Account *> accounts {p1,p2,p3};
+    std::vector<Account_Section_16*> accounts {p1,p2,p3};
     
-    display(accounts);
-    deposit(accounts, 1000);
-    withdraw(accounts, 2000);
+    display_Section_16(accounts);
+    deposit_Section_16(accounts, 1000);
+    withdraw_Section_16(accounts, 2000);
     
-    display(accounts);
+    display_Section_16(accounts);
     
     delete p1;
     delete p2;

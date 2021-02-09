@@ -1,4 +1,5 @@
 #include "Account.h"
+#include "InsufficientFundException.h"
 
 Account::Account(std::string name, double balance) 
     : name{name}, balance{balance} {
@@ -20,7 +21,7 @@ bool Account::withdraw(double amount) {
         balance-=amount;
         return true;
     } else
-        return false;
+        throw InsufficientFundException();
 }
 
  void Account::print(std::ostream &os) const {

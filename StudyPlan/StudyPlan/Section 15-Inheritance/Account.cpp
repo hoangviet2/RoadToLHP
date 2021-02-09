@@ -1,10 +1,10 @@
 #include "Account.h"
 
-Account::Account(std::string name, double balance) 
+Account_Section_15::Account_Section_15(std::string name, double balance)
     : name{name}, balance{balance} {
 }
 
-bool Account::deposit(double amount) {
+bool Account_Section_15::deposit_Section_15(double amount) {
     if (amount < 0) 
         return false;
     else {
@@ -13,7 +13,7 @@ bool Account::deposit(double amount) {
     }
 }
 
-bool Account::withdraw(double amount) {
+bool Account_Section_15::withdraw_Section_15(double amount) {
     if (balance-amount >=0) {
         balance-=amount;
         return true;
@@ -21,11 +21,11 @@ bool Account::withdraw(double amount) {
         return false;
 }
 
-double Account::get_balance() const {
+double Account_Section_15::get_balance_Section_15() const {
     return balance;
 }
 
-std::ostream &operator<<(std::ostream &os, const Account &account) {
+std::ostream &operator<<(std::ostream &os, const Account_Section_15 &account) {
     os << "[Account: " << account.name << ": " << account.balance << "]";
     return os;
 }

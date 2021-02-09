@@ -6,16 +6,16 @@
 //
 
 #include "Checking_Account.h"
-Checking_Account::Checking_Account(std::string name, double balance)
-    : Account {name, balance} {
+Checking_Account_Section_15::Checking_Account_Section_15(std::string name, double balance)
+    : Account_Section_15{name, balance} {
 }
 
-bool Checking_Account::withdraw(double amount) {
+bool Checking_Account_Section_15::withdraw_Section_15(double amount) {
     amount += per_check_fee;
-    return Account::withdraw(amount);
+    return Account_Section_15::withdraw_Section_15(amount);
 }
 
-std::ostream &operator<<(std::ostream &os, const Checking_Account &account) {
+std::ostream &operator<<(std::ostream &os, const Checking_Account_Section_15 &account) {
     os << "[Checking_Account: " << account.name << ": " << account.balance  << "]";
     return os;
 }

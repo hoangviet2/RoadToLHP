@@ -8,7 +8,7 @@
 #include "I_Printable.h"
 #include <iostream>
 
-std::ostream &operator<<(std::ostream &os, const I_Printable &obj){
-    obj.print(os);
+std::ostream &operator<<(std::ostream &os, const I_Printable_Section_16 &obj){
+    obj.print_Section_16(os);
     return os;
 }
