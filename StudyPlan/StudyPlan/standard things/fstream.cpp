@@ -12,8 +12,10 @@ int fstream()
 {
     int n;
     string name;
-    ifstream fi("input.txt");   // mo file de doc
-    ofstream fo("output.txt");  // mo file de ghi
+    ifstream fi;
+    fi.open("");// mo file de doc
+    ofstream fo;
+    fo.open("output.txt");  // mo file de ghi
      
     fi >> n;                  // doc 1 so tu file
     getline(fi, name);          // loai bo dau xuong dong sau khi doc so n

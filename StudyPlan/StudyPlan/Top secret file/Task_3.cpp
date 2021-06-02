@@ -75,8 +75,7 @@ int main_task_3(){
     Oup.close();
     return 0;
 }
-size_t getindex(vector<double> v, double K)
-{
+size_t getindex(vector<double> v, double K){
     size_t result {0};
     auto it = find(v.begin(), v.end(), K);
  
