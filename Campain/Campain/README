@@ -1,0 +1,7 @@
+Cách đặt tên cho file:
+Tạo thư mục tên: (LHP/PTNK) (niên học) (số lần làm)
+Trong đó:
+Tên các tệp tin lời giải đều phải ghi đúng tên của câu hỏi trong đề
+Các tệp Input/Output được để trong thư mục niên học theo tên file
+Chạy file ở main()
+Không thay đổi main()
