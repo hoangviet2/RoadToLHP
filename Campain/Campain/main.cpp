@@ -6,9 +6,12 @@
 //
 
 #include <iostream>
-
+#include "Solutions.hpp"
+#include "LHP2018.hpp"
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    LHP2018 target;
+    target.erase("XOACHUSO.INP", "XOACHUSO.OUT");
+    //target.substring("DOANPHU.INP", "DOANPHU.OUT");
+    //target.fence("RAOCAY.INP", "RAOCAY.OUT");
     return 0;
 }
