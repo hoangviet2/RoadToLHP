@@ -22,22 +22,26 @@ void showVector(vector<string> vectors){
     cout<<endl;
     return;
 }
+vector<int> generateRandomInput(int top,int bot,int element){
+    vector<int> result;
+    for(int i=0;i<element;++i){
+        result.push_back(rand())
+    }
+    return result;
+}
 int main(){
     Assignment target;
     cout<<target.add(12, 20)<<endl;
     cout<<target.centuryFromYear(1997)<<endl;
     cout<<boolalpha<<target.checkPalindrome("aba")<<endl;
-    //cout<<boolalpha<<target.checkPalindrome("abcd")<<endl;
     cout<<target.shapeArea(3)<<endl;
     cout<<target.makeArrayConsecutive2({})<<endl;
     cout<<target.matrixElementsSum({{}})<<endl;
     cout<<boolalpha<<target.almostIncreasingSequence({})<<endl;
     cout<<target.adjacentElementsProduct({})<<endl;
-    //cout<<target.allLongestStrings({});
     showVector(target.allLongestStrings({}));
     cout<<target.commonCharacterCount("", "");
     cout<<target.isLucky(6);
-    //cout<<target.sortByHeight({});
     showVector(target.sortByHeight({}));
     cout<<target.reverseInParentheses("");
     return 0;
